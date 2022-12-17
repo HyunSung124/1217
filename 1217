@@ -1,0 +1,94 @@
+# def solution(n, arr1, arr2):
+#     answer = []
+#     for i in range(len(arr1)):
+#         arr1[i] = bin(arr1[i])[2:]
+#         arr2[i] = bin(arr2[i])[2:]
+#         while len(arr1[i]) != n:
+#             arr1[i] = '0'+arr1[i]
+#         arr1[i] = arr1[i].replace('1', '#')
+#         arr1[i] = arr1[i].replace('0', ' ')
+#         while len(arr2[i]) != n:
+#             arr2[i] = '0'+arr2[i]
+#         arr2[i] = arr2[i].replace('1', '#')
+#         arr2[i] = arr2[i].replace('0', ' ')
+#     print(arr1,arr2)
+#     #answer.append(arr1,arr2)
+#
+#
+#     return answer
+# arr1 = [9, 20, 28, 18, 11]
+# arr2 = [30, 1, 21, 17, 28]
+# n = 5
+# print(solution(n, arr1, arr2))
+
+
+
+#신규아이디추천
+# def solution(new_id):
+#     answer = ''
+#     new_id = new_id.lower()
+#     for i in new_id:
+#         if i.isalnum() or i in ['-', '_', '.']:
+#             answer += i
+#     while '..' in answer:
+#         answer = answer.replace('..','.')
+#     # if '.' == answer[0]:
+#     #     answer = answer[1:]
+#     # if '.' == answer[-1]:
+#     #     answer = answer[:-1]
+#     answer = answer.strip('.')
+#     print(answer)
+#     if answer == '':
+#         answer = 'a'
+#
+#
+#
+#     return answer
+# new_id = "...!@BaT#*..y.abcdefghijklm"
+# print(solution(new_id))
+
+#다른방법
+# def solution(new_id):
+#     new_id = new_id.lower()
+#     for i in new_id:
+#         if not (i.islower() or i.isdigit() or i == '-' or i == '_' or i == '.'):
+#             new_id = new_id.replace(i, '')
+#     i = 0
+#     while i != len(new_id):
+#         if i == len(new_id) - 1:
+#             break
+#         if new_id[i] == '.' and new_id[i + 1] == '.':
+#             new_id = new_id[:i + 1] + new_id[i + 2:]
+#         else:
+#             i += 1
+#
+#     new_id = new_id.strip('.')
+#
+#     if len(new_id) == 0:
+#         new_id += 'a'
+#
+#     if len(new_id) >= 16:
+#         new_id = new_id[:15]
+#         new_id = new_id.strip('.')
+#
+#     if len(new_id) <= 2:
+#         new = new_id[-1]
+#         while len(new_id) != 3:
+#             new_id += new
+#
+#     return new_id
+# n = "...!@BaT#*..y.abcdefghijklm"
+# print(solution(n))
+
+
+#푸드 파이터 대회
+def solution(food):
+    answer = ''
+    for i in food[1:]:
+        answer += i
+        print(answer)
+        # if i % 2 == True:
+        #     i - 1
+    return answer
+food = [1, 3, 4, 6]
+print(solution(food))
